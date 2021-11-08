@@ -38,7 +38,13 @@ class FumettoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        // dd($data);
+        $comic = new Fumetto();
+        $comic = Fumetto::create($data);
+        $comic->save();
+
+        return redirect()->route('comic.show', $comic);
     }
 
     /**
@@ -60,9 +66,9 @@ class FumettoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, Fumetto $comic)
     {
-        //
+        return view("comic.edit", compact("comic", "request"));
     }
 
     /**
@@ -72,9 +78,13 @@ class FumettoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Fumetto $comic)
     {
-        //
+        $data = $request->all();
+
+        $comic->update($data);
+
+        return redirect()->route('comic.show', $comic);
     }
 
     /**

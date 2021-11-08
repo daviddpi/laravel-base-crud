@@ -11,8 +11,8 @@
         <ul class="list-group list-group-flush">
             {{-- titolo  --}}
           <li class="list-group-item">
-            <label for="name" class="form-label">Titolo fumetto</label>
-            <input class="form-control" type="text" id="name" name="name" placeholder="Inserisci il titolo" value="{{$comic->title}}" required>
+            <label for="title" class="form-label">Titolo fumetto</label>
+            <input class="form-control" type="text" id="title" name="title" placeholder="Inserisci il titolo" value="{{$comic->title}}" required>
           </li>
             {{-- autore --}}
           <li class="list-group-item">

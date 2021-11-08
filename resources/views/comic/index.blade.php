@@ -17,7 +17,7 @@
                                 {{ $comic->description}}
                             </p>
                         </div>
-                        <a class="p-4" href="#">Modifica</a>
+                        <a class="p-4" href="{{ route("comic.edit", $comic->id) }}">Modifica</a>
                     </div>
                 </div>
             @endforeach
