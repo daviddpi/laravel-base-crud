@@ -21,7 +21,8 @@
                     </div>
                 </div>
             @endforeach
-
         </div>
+        <a class="p-4" href="{{ route("comic.create")}}">Aggiungi fumetto</a>
+
     </div>
 @endsection

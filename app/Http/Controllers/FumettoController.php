@@ -24,10 +24,10 @@ class FumettoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Fumetto $comic)
+    public function create(Request $request, Fumetto $comic)
     {
         $comic = new Fumetto();
-        return view("comic.create", compact("comic"));
+        return view("comic.create", compact("comic", "request"));
     }
 
     /**
