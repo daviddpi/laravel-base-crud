@@ -15,7 +15,7 @@ class FumettoController extends Controller
     public function index()
     {
         $comics = Fumetto::all();
-        dd($comics);
+        // dd($comics);
         return view("comic.index", compact("comics"));
     }
 
@@ -46,8 +46,10 @@ class FumettoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Fumetto $comic)
     {
+        
+        return view("comic.show", compact("comic"));
         //
     }
 
