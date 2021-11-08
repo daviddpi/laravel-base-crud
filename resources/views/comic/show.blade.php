@@ -19,7 +19,7 @@
                         </p>
                         <h6>Prezzo: {{$comic->price}} &euro;</h6>
                     </div>
-                    <a class="p-4" href="#">Modifica</a>
+                    <a class="p-4" href="{{ route("comic.edit", $comic->id) }}">Modifica</a>
                 </div>
             </div>
         </div>
