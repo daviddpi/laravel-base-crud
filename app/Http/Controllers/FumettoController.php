@@ -14,7 +14,9 @@ class FumettoController extends Controller
      */
     public function index()
     {
-        return view("welcome");
+        $comics = Fumetto::all();
+        dd($comics);
+        return view("comic.index", compact("comics"));
     }
 
     /**

@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'FumettoController@index');
+Route::resource('comic', 'FumettoController');
