@@ -5,13 +5,13 @@
     <div class="container">
         <div class="row">
             <h1>Fumetti</h1>
-            <p class="text-success">
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }} Cancellazione eseguita correttamente!
-                    </div>
-                @endif
-            </p>
+            
+            @if (session('delete'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('delete') }} Cancellazione eseguita correttamente!
+                </div>
+            @endif
+            
             @foreach ($comics as $comic)
                 <div class="col-4 pt-5">
                     <div class="card" style="width: 18rem;">
