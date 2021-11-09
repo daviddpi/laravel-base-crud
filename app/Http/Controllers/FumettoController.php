@@ -93,8 +93,10 @@ class FumettoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Fumetto $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route("comic.index")->with("status");
     }
 }
