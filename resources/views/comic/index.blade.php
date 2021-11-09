@@ -27,7 +27,7 @@
                         </div>
                         <div class="d-flex justify-content-evenly align-items-center">
                             <a class="p-4" href="{{ route("comic.edit", $comic->id) }}">Modifica</a>
-                            <form action="{{ route("comic.destroy", $comic)}}" method="POST">
+                            <form class="delete-comic" data-title="{{$comic->title}}" action="{{ route("comic.destroy", $comic)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">
@@ -48,10 +48,18 @@
 @section('script-content')
     <script>
 
+        const deleteConfirm = document.querySelectorAll(".delete-comic");
+        deleteConfirm.forEach(element => {
+            element.addEventListener("submit", function(event){
 
+                event.preventDefault();
 
+                const title = element.getAttribute("data-title");
+                const confirm = window.confirm(`Sicuro di voler eliminare ${title}?`);
 
+                if(confirm) this.submit();
 
-
+            });
+        });
     </script>
 @endsection
